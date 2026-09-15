@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <!-- =====================================================
+         CraveGo - Restaurants Page
+         Purpose:
+         This page will display all restaurants available
+         in the CraveGo food delivery system.
+         ===================================================== -->
+
+    <!-- Basic HTML settings -->
+    <meta charset="UTF-8">
+
+    <!-- Makes the website responsive on mobile/tablet -->
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <!-- Browser tab title -->
+    <title>Restaurants - CraveGo</title>
+
+
+    <!-- =====================================================
+         GOOGLE FONTS
+         ===================================================== -->
+
+    <!-- Helps Google Fonts load faster -->
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <!--
+        DM Sans:
+        Used mainly for normal text.
+
+        Playfair Display:
+        Used mainly for headings.
+    -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <!-- =====================================================
+         FONT AWESOME
+         Used for icons throughout the website.
+         ===================================================== -->
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+
+    <!-- =====================================================
+         CRAVEGO MAIN CSS
+         ===================================================== -->
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+
+<body>
+
+
+    <!-- =====================================================
+         RESTAURANTS PAGE
+         ===================================================== -->
+
+
+
+<!-- =====================================================
+     CraveGo - Navigation Bar
+     Purpose:
+     Main navigation of the Restaurants page.
+     ===================================================== -->
+
+<nav class="navbar">
+
+    <!-- Logo -->
+    <a href="index.php" class="logo">
+        <i class="fa-solid fa-utensils"></i>
+        <span>Crave<span>Go</span></span>
+    </a>
+
+
+    <!-- Navigation Links -->
+    <div class="nav-links">
+
+        <a href="index.php">
+            <i class="fa-solid fa-house"></i>
+            Home
+        </a>
+
+        <a href="restaurants.html" class="active">
+            <i class="fa-solid fa-store"></i>
+            Restaurants
+        </a>
+
+        <a href="#">
+            <i class="fa-solid fa-bag-shopping"></i>
+            Orders
+        </a>
+
+        <a href="dashboard.php">
+            <i class="fa-solid fa-user"></i>
+            Account
+        </a>
+
+    </div>
+
+
+    <!-- Right side actions -->
+    <div class="nav-actions">
+
+        <!-- Cart -->
+        <a href="#" class="cart-icon">
+            <i class="fa-solid fa-cart-shopping"></i>
+
+            <!-- Cart item count -->
+            <span class="cart-count">0</span>
+        </a>
+
+
+        <!-- Login button -->
+        <a href="auth/login.php" class="login-btn">
+            Login
+        </a>
+
+    </div>
+
+
+    <!-- Mobile menu button -->
+    <button class="menu-toggle" id="menu-toggle">
+
+        <i class="fa-solid fa-bars"></i>
+
+    </button>
+
+</nav>
+<!-- =====================================================
+     CraveGo - Restaurants Hero Section
+     Purpose:
+     Restaurants page ke top par attractive introduction
+     aur restaurant search bar show karna.
+     ===================================================== -->
+
+<section class="restaurants-hero">
+
+    <!-- Hero content -->
+    <div class="hero-content">
+
+        <!-- Small label -->
+        <span class="hero-label">
+            <i class="fa-solid fa-utensils"></i>
+            DISCOVER & DINE
+        </span>
+
+
+        <!-- Main heading -->
+        <h1>
+            Find Your Next
+            <span>Favorite Meal</span>
+        </h1>
+
+
+        <!-- Short description -->
+        <p>
+            Explore delicious food from the best restaurants
+            around you and get your favorites delivered to
+            your doorstep.
+        </p>
+
+
+        <!-- Search box -->
+        <div class="restaurant-search">
+
+            <!-- Search icon -->
+            <i class="fa-solid fa-magnifying-glass"></i>
+
+            <!-- Search input -->
+            <input
+                type="text"
+                id="restaurant-search"
+                placeholder="Search restaurants..."
+                autocomplete="off"
+            >
+
+        </div>
+
+    </div>
+
+</section>
+    <!-- =====================================================
+     CraveGo - Restaurant Listing Section
+     Purpose:
+     API se aane wale restaurants ko cards ki form mein
+     display karna.
+     ===================================================== -->
+
+<section class="restaurant-section">
+
+    <!-- Section heading -->
+    <div class="section-heading">
+
+        <span class="section-label">
+            <i class="fa-solid fa-fire"></i>
+            TOP PICKS FOR YOU
+        </span>
+
+        <h2>
+            Explore Our
+            <span>Restaurants</span>
+        </h2>
+
+        <p>
+            Discover delicious meals and popular restaurants
+            ready to serve you.
+        </p>
+
+    </div>
+
+
+    <!--
+        JavaScript isi container ke andar
+        restaurant cards dynamically create karega.
+    -->
+    <div id="restaurant-list" class="restaurant-grid">
+
+        <!-- Temporary loading message -->
+        <p class="loading-message">
+            <i class="fa-solid fa-spinner fa-spin"></i>
+            Loading restaurants...
+        </p>
+
+    </div>
+
+</section>
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+         ===================================================== -->
+
+    <!--
+        This JavaScript file:
+
+        1. Calls the PHP API
+        2. Gets restaurant data
+        3. Converts JSON data
+        4. Creates restaurant cards
+        5. Displays them on this page
+    -->
+
+    <script src="js/restaurants.js"></script>
+
+
+</body>
+
+</html>

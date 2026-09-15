@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Basic page settings -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Page title -->
+    <title>Menu - CraveGo</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- Font Awesome Icons -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+    <!-- Main CraveGo stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- =====================================================
+         NAVBAR
+         ===================================================== -->
+    <nav class="navbar">
+
+        <!-- CraveGo Logo -->
+        <a href="index.php" class="logo">
+            <i class="fa-solid fa-utensils"></i>
+
+            <span>
+                Crave<span>Go</span>
+            </span>
+        </a>
+
+
+        <!-- Navigation Links -->
+        <div class="nav-links">
+
+            <a href="index.php">
+                <i class="fa-solid fa-house"></i>
+                Home
+            </a>
+
+            <a href="restaurants.html">
+                <i class="fa-solid fa-store"></i>
+                Restaurants
+            </a>
+
+            <a href="menu.html" class="active">
+                <i class="fa-solid fa-utensils"></i>
+                Menu
+            </a>
+
+            <a href="#">
+                <i class="fa-solid fa-bag-shopping"></i>
+                Orders
+            </a>
+
+            <a href="dashboard.php">
+                <i class="fa-solid fa-user"></i>
+                Account
+            </a>
+
+        </div>
+
+
+        <!-- Navbar Right Side -->
+        <div class="nav-actions">
+
+            <!-- Cart -->
+            <a href="cart.html" class="cart-icon">
+
+                <i class="fa-solid fa-cart-shopping"></i>
+
+                <!-- Cart item count -->
+                <span class="cart-count">0</span>
+
+            </a>
+
+
+            <!-- Login button -->
+            <a href="auth/login.php" class="login-btn">
+                Login
+            </a>
+
+        </div>
+
+
+        <!-- Mobile Menu Button -->
+        <button
+            class="menu-toggle"
+            id="menu-toggle"
+            type="button"
+            aria-label="Open navigation menu"
+        >
+            <i class="fa-solid fa-bars"></i>
+        </button>
+
+    </nav>
+
+
+    <!-- =====================================================
+         MENU HERO SECTION
+         ===================================================== -->
+    <section class="menu-hero">
+
+        <div class="menu-hero-content">
+
+            <!-- Small heading -->
+            <span class="hero-label">
+                <i class="fa-solid fa-bowl-food"></i>
+                EXPLORE OUR MENU
+            </span>
+
+
+            <!-- Main heading -->
+            <h1>
+                Delicious Food,
+                <span>Made For You</span>
+            </h1>
+
+
+            <!-- Description -->
+            <p>
+                Discover delicious meals from your favorite restaurants
+                and order your cravings with just a few clicks.
+            </p>
+
+
+            <!-- Search Box -->
+            <div class="menu-search">
+
+                <i class="fa-solid fa-magnifying-glass"></i>
+
+                <input
+                    type="text"
+                    id="food-search"
+                    placeholder="Search for burgers, pizza, pasta..."
+                    autocomplete="off"
+                >
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         MENU SECTION
+         ===================================================== -->
+    <section class="menu-section">
+
+        <!-- Section Heading -->
+        <div class="home-section-heading">
+
+            <span class="section-label">
+                <i class="fa-solid fa-fire"></i>
+                WHAT ARE YOU CRAVING?
+            </span>
+
+            <h2>
+                Explore Our
+                <span>Menu</span>
+            </h2>
+
+            <p>
+                Choose from a variety of delicious dishes prepared
+                by our partner restaurants.
+            </p>
+
+        </div>
+
+
+        <!-- =================================================
+             CATEGORY FILTERS
+             ================================================= -->
+        <div class="menu-filters" id="category-filters">
+
+            <!--
+                "All" button default active hai.
+                Baqi category buttons JavaScript se
+                database ke categories ke according create honge.
+            -->
+
+            <button
+                class="category-filter active"
+                type="button"
+                data-category="all"
+            >
+                <i class="fa-solid fa-border-all"></i>
+                All
+            </button>
+
+        </div>
+
+
+        <!-- =================================================
+             FOOD CARDS
+             ================================================= -->
+
+        <!--
+            JavaScript API se foods fetch karke
+            isi container ke andar cards create karega.
+        -->
+
+        <div id="food-list" class="food-menu-grid">
+
+            <!-- Loading message -->
+            <p class="loading-message">
+
+                <i class="fa-solid fa-spinner fa-spin"></i>
+
+                Loading delicious food...
+
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         FOOTER
+         ===================================================== -->
+    <footer class="footer">
+
+        <div class="footer-grid">
+
+            <!-- Brand -->
+            <div class="footer-brand">
+
+                <a href="index.php" class="logo">
+
+                    <i class="fa-solid fa-utensils"></i>
+
+                    <span>
+                        Crave<span>Go</span>
+                    </span>
+
+                </a>
+
+                <p>
+                    Delicious food from your favorite restaurants,
+                    delivered right to your doorstep.
+                </p>
+
+            </div>
+
+
+            <!-- Quick Links -->
+            <div>
+
+                <h3>Quick Links</h3>
+
+                <div class="footer-links">
+
+                    <a href="index.php">
+                        Home
+                    </a>
+
+                    <a href="restaurants.html">
+                        Restaurants
+                    </a>
+
+                    <a href="menu.html">
+                        Menu
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- Support -->
+            <div>
+
+                <h3>Support</h3>
+
+                <div class="footer-links">
+
+                    <a href="#">
+                        Help Center
+                    </a>
+
+                    <a href="#">
+                        Contact Us
+                    </a>
+
+                    <a href="#">
+                        Privacy Policy
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- Social -->
+            <div>
+
+                <h3>Follow Us</h3>
+
+                <div class="footer-links">
+
+                    <a href="#">
+                        <i class="fa-brands fa-facebook"></i>
+                        Facebook
+                    </a>
+
+                    <a href="#">
+                        <i class="fa-brands fa-instagram"></i>
+                        Instagram
+                    </a>
+
+                    <a href="#">
+                        <i class="fa-brands fa-linkedin"></i>
+                        LinkedIn
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- Footer Bottom -->
+        <div class="footer-bottom">
+
+            © 2026 CraveGo. All Rights Reserved.
+
+        </div>
+
+    </footer>
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+         ===================================================== -->
+
+    <!-- Menu page JavaScript -->
+    <script src="js/cart.js"></script>
+    <script src="js/menu.js"></script>
+
+</body>
+</html>
