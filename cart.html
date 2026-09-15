@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <!-- Basic Page Settings -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Your Cart - CraveGo</title>
+
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================================
+         NAVBAR
+         ===================================================== -->
+
+    <nav class="navbar">
+
+        <!-- Logo -->
+        <a href="index.php" class="logo">
+
+            <i class="fa-solid fa-utensils"></i>
+
+            <span>
+                Crave<span>Go</span>
+            </span>
+
+        </a>
+
+
+        <!-- Navigation Links -->
+        <div class="nav-links">
+
+            <a href="index.php">
+                <i class="fa-solid fa-house"></i>
+                Home
+            </a>
+
+            <a href="restaurants.html">
+                <i class="fa-solid fa-store"></i>
+                Restaurants
+            </a>
+
+            <a href="menu.html">
+                <i class="fa-solid fa-utensils"></i>
+                Menu
+            </a>
+
+            <a href="cart.html">
+                <i class="fa-solid fa-bag-shopping"></i>
+                Cart
+            </a>
+
+            <a href="dashboard.php">
+                <i class="fa-solid fa-user"></i>
+                Account
+            </a>
+
+        </div>
+
+
+        <!-- Right Side -->
+        <div class="nav-actions">
+
+            <!-- Cart -->
+            <a href="cart.html" class="cart-icon">
+
+                <i class="fa-solid fa-cart-shopping"></i>
+
+                <span class="cart-count">
+                    0
+                </span>
+
+            </a>
+
+
+            <!-- Login -->
+            <a href="auth/login.php" class="login-btn">
+                Login
+            </a>
+
+        </div>
+
+
+        <!-- Mobile Menu -->
+        <button
+            class="menu-toggle"
+            id="menu-toggle"
+            type="button"
+            aria-label="Open navigation menu"
+        >
+
+            <i class="fa-solid fa-bars"></i>
+
+        </button>
+
+    </nav>
+
+
+
+    <!-- =====================================================
+         CART HERO
+         ===================================================== -->
+
+    <section class="cart-hero">
+
+        <div class="cart-hero-content">
+
+            <span class="hero-label">
+
+                <i class="fa-solid fa-cart-shopping"></i>
+
+                YOUR SHOPPING CART
+
+            </span>
+
+
+            <h1>
+
+                Your Favorite
+                <span>Meals</span>
+
+            </h1>
+
+
+            <p>
+
+                Review your selected meals, adjust quantities,
+                and get ready to enjoy your order.
+
+            </p>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         CART SECTION
+         ===================================================== -->
+
+    <section class="cart-section">
+
+        <div class="cart-container">
+
+
+            <!-- =================================================
+                 LEFT SIDE - CART ITEMS
+                 ================================================= -->
+
+            <div class="cart-items-area">
+
+
+                <!-- Cart Heading -->
+                <div class="cart-heading">
+
+                    <div>
+
+                        <span class="section-label">
+
+                            <i class="fa-solid fa-bag-shopping"></i>
+
+                            YOUR ORDER
+
+                        </span>
+
+
+                        <h2>
+
+                            Cart
+                            <span>Items</span>
+
+                        </h2>
+
+                    </div>
+
+
+                    <!-- Item Count -->
+                    <span
+                        class="cart-items-count"
+                        id="cart-items-count"
+                    >
+                        0 items
+                    </span>
+
+                </div>
+
+
+                <!--
+                    JavaScript LocalStorage se
+                    cart items yahan show karega.
+                -->
+
+                <div
+                    id="cart-items"
+                    class="cart-items"
+                >
+
+                    <div class="cart-loading">
+
+                        <i class="fa-solid fa-spinner fa-spin"></i>
+
+                        Loading your cart...
+
+                    </div>
+
+                </div>
+
+
+                <!-- Continue Shopping -->
+                <a
+                    href="menu.html"
+                    class="continue-shopping"
+                >
+
+                    <i class="fa-solid fa-arrow-left"></i>
+
+                    Continue Shopping
+
+                </a>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 RIGHT SIDE - ORDER SUMMARY
+                 ================================================= -->
+
+            <aside class="cart-summary">
+
+
+                <!-- Summary Header -->
+                <div class="summary-header">
+
+                    <span class="section-label">
+
+                        <i class="fa-solid fa-receipt"></i>
+
+                        ORDER SUMMARY
+
+                    </span>
+
+
+                    <h2>
+
+                        Your
+                        <span>Total</span>
+
+                    </h2>
+
+                </div>
+
+
+                <!-- Subtotal -->
+                <div class="summary-row">
+
+                    <span>
+                        Subtotal
+                    </span>
+
+                    <strong id="cart-subtotal">
+                        Rs. 0.00
+                    </strong>
+
+                </div>
+
+
+                <!-- Delivery Fee -->
+                <div class="summary-row">
+
+                    <span>
+                        Delivery Fee
+                    </span>
+
+                    <strong id="delivery-fee">
+                        Rs. 0.00
+                    </strong>
+
+                </div>
+
+
+                <!-- Divider -->
+                <div class="summary-divider"></div>
+
+
+                <!-- Total -->
+                <div class="summary-total">
+
+                    <span>
+                        Total
+                    </span>
+
+                    <strong id="cart-total">
+                        Rs. 0.00
+                    </strong>
+
+                </div>
+
+
+                <!-- =================================================
+                     CHECKOUT BUTTON
+                     IMPORTANT:
+                     Ye checkout.php par jayega.
+                     ================================================= -->
+
+                <a
+                    href="checkout.php"
+                    class="checkout-btn"
+                >
+
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                    Proceed to Checkout
+
+                </a>
+
+
+                <!-- Secure Checkout -->
+                <div class="secure-checkout">
+
+                    <i class="fa-solid fa-shield-halved"></i>
+
+                    <div>
+
+                        <strong>
+                            Secure Checkout
+                        </strong>
+
+                        <span>
+                            Your order information is protected.
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </aside>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         FOOTER
+         ===================================================== -->
+
+    <footer class="footer">
+
+        <div class="footer-grid">
+
+
+            <!-- Brand -->
+            <div class="footer-brand">
+
+                <a href="index.php" class="logo">
+
+                    <i class="fa-solid fa-utensils"></i>
+
+                    <span>
+                        Crave<span>Go</span>
+                    </span>
+
+                </a>
+
+
+                <p>
+
+                    Delicious food from your favorite restaurants,
+                    delivered right to your doorstep.
+
+                </p>
+
+            </div>
+
+
+
+            <!-- Quick Links -->
+            <div>
+
+                <h3>
+                    Quick Links
+                </h3>
+
+
+                <div class="footer-links">
+
+                    <a href="index.php">
+                        Home
+                    </a>
+
+                    <a href="restaurants.html">
+                        Restaurants
+                    </a>
+
+                    <a href="menu.html">
+                        Menu
+                    </a>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- Support -->
+            <div>
+
+                <h3>
+                    Support
+                </h3>
+
+
+                <div class="footer-links">
+
+                    <a href="#">
+                        Help Center
+                    </a>
+
+                    <a href="#">
+                        Contact Us
+                    </a>
+
+                    <a href="#">
+                        Privacy Policy
+                    </a>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- Social -->
+            <div>
+
+                <h3>
+                    Follow Us
+                </h3>
+
+
+                <div class="footer-links">
+
+                    <a href="#">
+                        <i class="fa-brands fa-facebook"></i>
+                        Facebook
+                    </a>
+
+                    <a href="#">
+                        <i class="fa-brands fa-instagram"></i>
+                        Instagram
+                    </a>
+
+                    <a href="#">
+                        <i class="fa-brands fa-linkedin"></i>
+                        LinkedIn
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- Footer Bottom -->
+        <div class="footer-bottom">
+
+            © 2026 CraveGo. All Rights Reserved.
+
+        </div>
+
+    </footer>
+
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+         ===================================================== -->
+
+    <script src="js/cart.js"></script>
+
+
+</body>
+
+</html>
